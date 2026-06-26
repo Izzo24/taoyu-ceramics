@@ -1,0 +1,42 @@
+/* 陶隅 TAOYU — header 會員/購物車 + 側欄 + 會員中心(addon, 自然有機) */
+.nav-links .acct-link,.nav-links .cart-toggle{display:inline-flex;align-items:center;gap:.4rem;background:none;border:0;cursor:pointer;color:var(--ink,#2c2823);font:inherit;font-size:.95rem;padding:.2rem;line-height:1}
+.nav-links .cart-toggle{position:relative}
+.nav-links li:has(.acct-link),.nav-links li:has(.cart-toggle){display:inline-flex;align-items:center}
+.nav-links .acct-link svg,.nav-links .cart-toggle svg{width:21px;height:21px}
+.nav-links .acct-link:hover,.nav-links .cart-toggle:hover{color:#b5734f}
+.cart-badge{display:inline-flex;align-items:center;justify-content:center;min-width:16px;height:16px;padding:0 4px;background:#b5734f;color:#fbf8f1;font-size:10px;font-weight:600;border-radius:50px}
+.cart-overlay{position:fixed;inset:0;background:rgba(44,40,35,.5);opacity:0;visibility:hidden;transition:.3s;z-index:200}
+.cart-overlay.show{opacity:1;visibility:visible}
+.cart-drawer{position:fixed;top:0;right:0;height:100%;width:min(400px,92vw);background:#f6f1e7;border-left:1px solid #ddd2bf;transform:translateX(100%);transition:transform .35s ease;z-index:210;display:flex;flex-direction:column;color:#2c2823}
+.cart-drawer.open{transform:translateX(0)}
+.cd-head{display:flex;align-items:center;justify-content:space-between;padding:1.3rem 1.5rem;border-bottom:1px solid #ddd2bf}
+.cd-head h2{font-family:"Noto Serif TC",serif;font-size:1.4rem;margin:0;font-weight:600}
+.cd-close{background:none;border:0;cursor:pointer;color:#2c2823;display:inline-flex;padding:.3rem}.cd-close svg{width:23px;height:23px}
+.cd-body{flex:1;overflow:auto;padding:1.8rem 1.5rem}
+.cd-empty{text-align:center;margin-top:2.4rem;line-height:2;color:#6f675b}
+.cd-foot{border-top:1px solid #ddd2bf;padding:1.4rem 1.5rem}
+.cd-total{display:flex;justify-content:space-between;font-family:"Noto Serif TC",serif;font-size:1.2rem;margin-bottom:1rem}
+.mc-btn{display:inline-flex;align-items:center;justify-content:center;gap:.5rem;background:#b5734f;color:#fbf8f1;border:1px solid #b5734f;padding:.85rem 1.7rem;cursor:pointer;transition:.25s;font:inherit;text-decoration:none;border-radius:30px}
+.mc-btn:hover{background:#9a5e3d;border-color:#9a5e3d}
+.cd-foot .mc-btn{width:100%}
+.mc-wrap{max-width:1120px;margin:0 auto;padding:2.6rem 24px 4.5rem;color:#2c2823}
+.mc-crumb{font-size:.82rem;letter-spacing:.06em;color:#6f675b;margin-bottom:1.6rem}.mc-crumb a{color:#6f675b}.mc-crumb a:hover{color:#b5734f}
+.mc-title{font-family:"Noto Serif TC",serif;font-weight:600;font-size:clamp(2.3rem,6vw,3.8rem);margin:0 0 .5rem}
+.mc-sub{max-width:54ch;margin:0 0 2.6rem;font-size:1.06rem;color:#6f675b}
+.mc-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem;margin-bottom:1rem}
+.mc-card{border:1px solid #ddd2bf;background:#fbf8f1;padding:2rem;border-radius:14px}
+.mc-card h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:1.6rem;margin:0 0 1.3rem}
+.mc-card label{display:block;font-size:.82rem;margin-bottom:1.1rem;color:#6f675b}
+.mc-card input{display:block;width:100%;margin-top:.45rem;padding:.8rem .9rem;border:1px solid #ddd2bf;background:#f6f1e7;font:inherit;font-size:15px;color:#2c2823;border-radius:8px}
+.mc-card input:focus{outline:none;border-color:#b5734f}
+.mc-h2{font-family:"Noto Serif TC",serif;font-weight:600;font-size:clamp(1.7rem,4vw,2.5rem);margin:2.6rem 0 1.5rem}
+.mc-benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:1.3rem}
+.mc-benefit{border:1px solid #ddd2bf;padding:1.5rem;background:#fbf8f1;border-radius:12px}
+.mc-benefit svg{width:30px;height:30px;margin-bottom:.8rem;color:#b5734f}
+.mc-benefit h3{font-family:"Noto Serif TC",serif;font-size:1.15rem;margin:0 0 .4rem}.mc-benefit p{margin:0;font-size:.9rem;color:#6f675b}
+.mc-orders{border:1px solid #ddd2bf;background:#efe7d7;padding:2.2rem;text-align:center;margin-top:1.8rem;border-radius:14px}
+.mc-orders h2{font-family:"Noto Serif TC",serif;margin:0 0 .6rem}.mc-orders p{margin:0 0 1.5rem;color:#6f675b}
+.addon-toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,150%);background:#2c2823;color:#f6f1e7;padding:.9rem 1.6rem;z-index:300;transition:transform .4s;border-radius:30px}
+.addon-toast.show{transform:translate(-50%,0)}
+@media(max-width:760px){.mc-grid{grid-template-columns:1fr}.mc-benefits{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.mc-benefits{grid-template-columns:1fr}}
